@@ -29,5 +29,15 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Build Docker image
-        run: docker build -t fuse-fe .
+  # deploy:
+  #   needs: build-and-test
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+
+  #   steps:
+  #     - name: Deploy to production
+  #       run: |
+  #         # Add your deployment commands here
+  #         # For example, deploying to Vercel:
+  #         # npm install -g vercel
+  #         # vercel --prod
